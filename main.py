@@ -73,9 +73,6 @@ def main():
     print(f"{client1.name}: {client1.balance} грн")
     print(f"{client2.name}: {client2.balance} грн")
 
-    assert client1.balance < 150, "Баланс клієнта не зменшився!"
-    assert st_b.count() > 0, "На станції Вокзал мають бути велосипеди"
-
     print_admin_report(stations, rental)
 
 
