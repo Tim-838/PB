@@ -1,3 +1,5 @@
+from bike import ElectroBike
+
 class Stations:
     def __init__(self, name):
         self.name = name
@@ -9,7 +11,7 @@ class Stations:
 
     def take_bike(self):
         for bike in self.bikes:
-            if bike.is_rentable():
+            if bike.can_be_issued():
                 self.bikes.remove(bike)
                 return bike
         return None
@@ -24,8 +26,8 @@ class Stations:
     def low_charge_bikes(self):
         result = []
         for bike in self.bikes:
-            if isinstance(bike, ElectroBike) and bike.charge < low_charge:
-                result.append((bike.number, self.name, bike.charge))
+            if isinstance(bike, ElectroBike) and bike.charge < 20:
+                result.append((bike.numb, self.name, bike.charge))
         return result
 
 
