@@ -22,6 +22,7 @@ class Stations:
 
 
     def low_charge_bikes(self):
+        low_charge = 20
         result = []
         for bike in self.bikes:
             if isinstance(bike, ElectroBike) and bike.charge < low_charge:
