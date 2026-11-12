@@ -4,6 +4,8 @@ class Client:
         self.balance = balance
 
     def charge(self, amount):
+        if amount < 0:
+            return False
         if self.balance >= amount:
             self.balance -= amount
             return True
